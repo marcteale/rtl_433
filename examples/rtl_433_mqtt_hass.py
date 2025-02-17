@@ -386,4 +386,7 @@ if __name__ == "__main__":
     else:
         logging.info("Discovering all devices")
 
-    run()
+    try:
+        run()
+    except KeyboardInterrupt:
+        logging.info("Exiting on user cancel.")
