@@ -27,11 +27,11 @@
       "device_class": "battery",
       "entity_category": "diagnostic",
       "name": "Battery",
-      "state_class": "measurement",
-      "unit_of_measurement": "%",
-      "value_template": "{{ ((float(value) * 99)|round(0)) + 1 }}"
+      "force_update": "true",
+      "payload_off": "1",
+      "payload_on": "0"
     },
-    "device_type": "sensor",
+    "device_type": "binary_sensor",
     "object_suffix": "B"
   },
   "button": {
@@ -140,7 +140,7 @@
       "device_class": "pm10",
       "name": "Estimated PM 10 Concentration",
       "state_class": "measurement",
-      "unit_of_measurement": "\\u00b5g/m\\u00b3",
+      "unit_of_measurement": "µg/m³",
       "value_template": "{{ value|float }}"
     },
     "device_type": "sensor",
@@ -261,7 +261,7 @@
       "device_class": "pm10",
       "name": "PM 10 Concentration",
       "state_class": "measurement",
-      "unit_of_measurement": "\\u00b5g/m\\u00b3",
+      "unit_of_measurement": "µg/m³",
       "value_template": "{{ value|float }}"
     },
     "device_type": "sensor",
@@ -272,7 +272,7 @@
       "device_class": "pm25",
       "name": "PM 2.5 Concentration",
       "state_class": "measurement",
-      "unit_of_measurement": "\\u00b5g/m\\u00b3",
+      "unit_of_measurement": "µg/m³",
       "value_template": "{{ value|float }}"
     },
     "device_type": "sensor",
@@ -439,6 +439,68 @@
     "device_type": "sensor",
     "object_suffix": "V"
   },
+  "switch1": {
+    "config": {
+      "device_class": "opening",
+      "entity_category": "diagnostic",
+      "force_update": "true",
+      "icon": "mdi:electric-switch-closed",
+      "name": "Integrated reed switch",
+      "payload_off": "CLOSED",
+      "payload_on": "OPEN"
+    },
+    "device_type": "binary_sensor",
+    "object_suffix": "sw1"
+  },
+  "switch2": {
+    "config": {
+      "device_class": "opening",
+      "entity_category": "diagnostic",
+      "force_update": "true",
+      "icon": "mdi:electric-switch-closed",
+      "payload_off": "CLOSED",
+      "payload_on": "OPEN"
+    },
+    "device_type": "binary_sensor",
+    "object_suffix": "sw2"
+  },
+  "switch3": {
+    "config": {
+      "device_class": "opening",
+      "entity_category": "diagnostic",
+      "force_update": "true",
+      "icon": "mdi:electric-switch-closed",
+      "name": "\"Push to Program\" button",
+      "payload_off": "CLOSED",
+      "payload_on": "OPEN"
+    },
+    "device_type": "binary_sensor",
+    "object_suffix": "sw3"
+  },
+  "switch4": {
+    "config": {
+      "device_class": "opening",
+      "entity_category": "diagnostic",
+      "force_update": "true",
+      "icon": "mdi:electric-switch-closed",
+      "payload_off": "CLOSED",
+      "payload_on": "OPEN"
+    },
+    "device_type": "binary_sensor",
+    "object_suffix": "sw4"
+  },
+  "switch5": {
+    "config": {
+      "device_class": "opening",
+      "entity_category": "diagnostic",
+      "force_update": "true",
+      "icon": "mdi:electric-switch-closed",
+      "payload_off": "CLOSED",
+      "payload_on": "OPEN"
+    },
+    "device_type": "binary_sensor",
+    "object_suffix": "sw5"
+  },
   "tamper": {
     "config": {
       "device_class": "safety",
@@ -455,7 +517,7 @@
       "device_class": "temperature",
       "name": "Temperature 1",
       "state_class": "measurement",
-      "unit_of_measurement": "\\u00b0C",
+      "unit_of_measurement": "°C",
       "value_template": "{{ value|float|round(1) }}"
     },
     "device_type": "sensor",
@@ -466,7 +528,7 @@
       "device_class": "temperature",
       "name": "Temperature 2",
       "state_class": "measurement",
-      "unit_of_measurement": "\\u00b0C",
+      "unit_of_measurement": "°C",
       "value_template": "{{ value|float|round(1) }}"
     },
     "device_type": "sensor",
@@ -477,7 +539,7 @@
       "device_class": "temperature",
       "name": "Temperature 3",
       "state_class": "measurement",
-      "unit_of_measurement": "\\u00b0C",
+      "unit_of_measurement": "°C",
       "value_template": "{{ value|float|round(1) }}"
     },
     "device_type": "sensor",
@@ -488,7 +550,7 @@
       "device_class": "temperature",
       "name": "Temperature 4",
       "state_class": "measurement",
-      "unit_of_measurement": "\\u00b0C",
+      "unit_of_measurement": "°C",
       "value_template": "{{ value|float|round(1) }}"
     },
     "device_type": "sensor",
@@ -499,7 +561,7 @@
       "device_class": "temperature",
       "name": "Temperature",
       "state_class": "measurement",
-      "unit_of_measurement": "\\u00b0C",
+      "unit_of_measurement": "°C",
       "value_template": "{{ value|float|round(1) }}"
     },
     "device_type": "sensor",
@@ -510,7 +572,7 @@
       "device_class": "temperature",
       "name": "Temperature",
       "state_class": "measurement",
-      "unit_of_measurement": "\\u00b0F",
+      "unit_of_measurement": "°F",
       "value_template": "{{ value|float|round(1) }}"
     },
     "device_type": "sensor",
@@ -595,7 +657,7 @@
     "config": {
       "name": "Wind Direction",
       "state_class": "measurement",
-      "unit_of_measurement": "\\u00b0",
+      "unit_of_measurement": "°",
       "value_template": "{{ value|float }}"
     },
     "device_type": "sensor",
