@@ -59,7 +59,7 @@ the MQTT server loses its retained messages.
 
 Getting rtl_433 devices back after Home Assistant restarts will happen
 more quickly if MQTT retain is enabled. Note however that definitions
-for any transitient devices/false positives will retained indefinitely.
+for any transient devices/false positives will retained indefinitely.
 
 If your sensor values change infrequently and you prefer to write the most
 recent value even if not changed set -f to append "force_update = true" to
