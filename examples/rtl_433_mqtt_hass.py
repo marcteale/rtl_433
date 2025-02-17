@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
 # coding=utf-8
+import argparse
+import json
+import logging
+import os
+import re
+import time
+
+import paho.mqtt.client as mqtt
 
 AP_DESCRIPTION = """
 Publish Home Assistant MQTT auto discovery topics for rtl_433 devices.
@@ -85,14 +93,6 @@ done in Home Assistant.
 There is a single global set of field mappings to Home Assistant meta data.
 
 """
-import argparse
-import json
-import logging
-import os
-import re
-import time
-
-import paho.mqtt.client as mqtt
 
 discovery_timeouts = {}
 
