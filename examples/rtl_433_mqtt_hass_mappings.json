@@ -495,6 +495,7 @@
       "entity_category": "diagnostic",
       "force_update": "true",
       "icon": "mdi:electric-switch-closed",
+      "name": "External plug-in sensor",
       "payload_off": "CLOSED",
       "payload_on": "OPEN"
     },
