@@ -2,6 +2,7 @@
 # coding=utf-8
 import argparse
 import json
+import yaml
 import logging
 import os
 import re
@@ -103,14 +104,14 @@ SKIP_KEYS = ["type", "model", "subtype", "channel", "id", "mic", "mod",
 
 # Global mapping of rtl_433 field names to Home Assistant metadata.
 # @todo - Model specific definitions might be needed
-with open('rtl_433_mqtt_hass_mappings.json', 'r') as file:
-    mappings = json.load(file)
+with open('rtl_433_mqtt_hass_mappings.yaml', 'r') as file:
+    mappings = yaml.safe_load(file)
 
 # Use secret_knock to trigger device automations for Honeywell ActivLink
 # doorbells. We have this outside of mappings as we need to configure two
 # different configuration topics.
-with open('rtl_433_mqtt_hass_secret_knock_mappings.json', 'r') as file:
-    secret_knock_mappings = json.load(file)
+with open('rtl_433_mqtt_hass_secret_knock_mappings.yaml', 'r') as file:
+    secret_knock_mappings = yaml.safe_load(file)
 
 TOPIC_PARSE_RE = re.compile(r'\[(?P<slash>/?)(?P<token>[^\]:]+):?(?P<default>[^\]:]*)\]')
 
