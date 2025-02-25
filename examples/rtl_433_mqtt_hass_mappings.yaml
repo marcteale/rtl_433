@@ -51,6 +51,7 @@ co2_ppm:
     value_template: '{{ value|int }}'
   device_type: sensor
   object_suffix: CO2
+# Remove me before commit
 Consumption:
   config:
     name: Consumption
@@ -68,10 +69,14 @@ consumption:
     value_template: '{{ value|int }}'
   device_type: sensor
   object_suffix: consumption
+# Remove me before commit
 consumption_data:
   config:
-    name: SCM Consumption Value
+    name: Consumption
     state_class: total_increasing
+    device_class: gas
+    unit_of_measurement: CCF
+    icon: mdi:meter-gas
     value_template: '{{ value|int }}'
   device_type: sensor
   object_suffix: consumption
