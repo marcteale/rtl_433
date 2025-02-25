@@ -51,6 +51,16 @@ co2_ppm:
     value_template: '{{ value|int }}'
   device_type: sensor
   object_suffix: CO2
+Consumption:
+  config:
+    name: Consumption
+    state_class: total_increasing
+    value_template: '{{ value|int }}'
+    device_class: water
+    unit_of_measurement: CCF
+    icon: mdi:gauge
+  device_type: sensor
+  object_suffix: Consumption
 consumption:
   config:
     name: SCMplus Consumption Value
