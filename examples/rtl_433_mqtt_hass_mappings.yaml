@@ -58,7 +58,7 @@ Consumption:
     state_class: total_increasing
     value_template: '{{ value|int }}'
     device_class: water
-    unit_of_measurement: CCF
+    unit_of_measurement: ft³
     icon: mdi:gauge
   device_type: sensor
   object_suffix: Consumption
@@ -75,7 +75,7 @@ consumption_data:
     name: Consumption
     state_class: total_increasing
     device_class: gas
-    unit_of_measurement: CCF
+    unit_of_measurement: ft³
     icon: mdi:meter-gas
     value_template: '{{ value|int }}'
   device_type: sensor
