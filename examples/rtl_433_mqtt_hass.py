@@ -11,6 +11,8 @@ import os
 import re
 import time
 
+import paho.mqtt.client as mqtt
+
 AP_DESCRIPTION = """
 Publish Home Assistant MQTT auto discovery topics for rtl_433 devices.
 
