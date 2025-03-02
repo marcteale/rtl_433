@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # coding=utf-8
 import argparse
 import json
@@ -8,7 +8,8 @@ import os
 import re
 import time
 
-import paho.mqtt.client as mqtt
+from __future__ import print_function
+from __future__ import with_statement
 
 AP_DESCRIPTION = """
 Publish Home Assistant MQTT auto discovery topics for rtl_433 devices.
@@ -219,6 +220,12 @@ def publish_config(mqttc, topic, model, object_id, mapping, key=None):
         config["name"] = readable_name
     config["device"] = {"identifiers": [object_id], "name": object_id, "model": model, "manufacturer": "rtl_433"}
 
+    try:
+        hassio_device_mfgr, hassio_device_modl = model.split('-', 1)
+        config["device"] = { "identifiers": [object_id], "name": object_id, "model": hassio_device_modl, "manufacturer": hassio_device_mfgr }
+    except ValueError:
+        config["device"] = { "identifiers": [object_id], "name": object_id, "model": model, "manufacturer": "rtl_433" }
+  
     if args.force_update:
         config["force_update"] = "true"
 
