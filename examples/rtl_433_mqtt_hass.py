@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 # coding=utf-8
+from __future__ import print_function
+from __future__ import with_statement
+
 import argparse
 import json
 import yaml
@@ -7,9 +10,6 @@ import logging
 import os
 import re
 import time
-
-from __future__ import print_function
-from __future__ import with_statement
 
 AP_DESCRIPTION = """
 Publish Home Assistant MQTT auto discovery topics for rtl_433 devices.
